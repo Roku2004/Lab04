@@ -14,19 +14,39 @@ public class Book extends Media {
         this.authors = authors;
     }
 
+    public Book(String title, String category, float cost) {
+        super(title, category, cost); // Gọi constructor của Media
+    }
+
+    public Book(int nextId, String title, String category, float cost) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public Book(int nextId, String title) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public Book(int nextId, String title1, String category1, float cost1, String authorName1) {
+        //TODO Auto-generated constructor stub
+    }
+
     public List<String> getAuthors() {
         return authors;
     }
 
     public void addAuthor(String authorName){
-        for(String author : authors){
-            if(authorName.equalsIgnoreCase(author)){
-                System.out.println("The author already exists.");
+        try {
+            for(String author : authors){
+                if(authorName.equalsIgnoreCase(author)){
+                    System.out.println("The author already exists.");
+                }
+                else{
+                    authors.add(authorName);
+                    System.out.println("Add author successfully.");
+                }
             }
-            else{
-                authors.add(authorName);
-                System.out.println("Add author successfully.");
-            }
+        } catch (Exception e) {
+            System.out.println("ERROL" + e);
         }
     }
 
